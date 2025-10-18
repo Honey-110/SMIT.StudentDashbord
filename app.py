@@ -61,3 +61,26 @@ if "gender" in df.columns:
     st.pyplot(fig3)
 else:
     st.info("Column 'gender' not found. Skipping bar plot.")
+
+
+
+
+
+
+
+
+
+
+
+from streamlit_lottie import st_lottie
+import requests
+
+def load_lottieurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+lottie = load_lottieurl("https://assets7.lottiefiles.com/packages/lf20_tfb3estd.json")
+st_lottie(lottie, speed=1, height=180, key="header_anim")
+
